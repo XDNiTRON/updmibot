@@ -34,7 +34,7 @@ class AriaDownloadHelper(DownloadHelper):
                     smsg, button = gdrive.drive_list(sname)
                 if smsg:
                     aria2.remove([download])
-                    dl.getListener().onDownloadError(f'File | Folder is already available in Drive 🤨\n\n')
+                    dl.getListener().onDownloadError(f'File/Folder is already available in Drive 🤨\n\n')
                     sendMarkup("Here are the search results 🥶", dl.getListener().bot, dl.getListener().update, button)
                     return
 
@@ -80,7 +80,7 @@ class AriaDownloadHelper(DownloadHelper):
         sleep(0.5)
         dl = getDownloadByGid(gid)
         if dl: 
-            dl.getListener().onDownloadError('Dead Torrent ☹️')
+            dl.getListener().onDownloadError('Dead Torrent 🥲')
 
     @new_thread
     def __onDownloadError(self, api, gid):
