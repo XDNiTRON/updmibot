@@ -178,7 +178,7 @@ class MegaDownloadHelper:
                 smsg, button = gd.drive_list(mname)
             if smsg:
                 deleteMessage(listener.bot, msg)
-                msg1 = "File | Folder is already available in Drive 🤨\nHere are the search results🥶"
+                msg1 = "File/Folder is already available in Drive 🤨\nHere are the search results🥶"
                 sendMarkup(msg1, listener.bot, listener.update, button)
                 return
             else:
