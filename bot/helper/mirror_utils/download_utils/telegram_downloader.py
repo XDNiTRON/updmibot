@@ -76,7 +76,7 @@ class TelegramDownloadHelper(DownloadHelper):
             self.__onDownloadComplete()
         else:
             if not self.__is_cancelled:
-                self.__onDownloadError('Internal error occurred 🥵')
+                self.__onDownloadError('Internal Error Occurred 🥵')
 
     def add_download(self, message, path, filename):
         _message = self._bot.get_messages(message.chat.id, message.message_id)
