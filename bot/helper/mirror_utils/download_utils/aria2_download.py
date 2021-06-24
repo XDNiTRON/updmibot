@@ -34,8 +34,8 @@ class AriaDownloadHelper(DownloadHelper):
                     smsg, button = gdrive.drive_list(sname)
                 if smsg:
                     aria2.remove([download])
-                    dl.getListener().onDownloadError(f'File/Folder is already available in Drive.\n\n')
-                    sendMarkup("Here are the search results:", dl.getListener().bot, dl.getListener().update, button)
+                    dl.getListener().onDownloadError(f'File | Folder is already available in Drive 🤨\n\n')
+                    sendMarkup("Here are the search results 🥶", dl.getListener().bot, dl.getListener().update, button)
                     return
 
             if TORRENT_DIRECT_LIMIT is not None:
@@ -48,12 +48,12 @@ class AriaDownloadHelper(DownloadHelper):
                 if 'GB' in limit or 'gb' in limit:
                     if size > limitint * 1024**3:
                         aria2.remove([download])
-                        dl.getListener().onDownloadError(f'Torrent/Direct limit is {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}')
+                        dl.getListener().onDownloadError(f'Torrent/Direct limit is ➣ {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is ➣ {get_readable_file_size(size)}')
                         return
                 elif 'TB' in limit or 'tb' in limit:
                     if size > limitint * 1024**4:
                         aria2.remove([download])
-                        dl.getListener().onDownloadError(f'Torrent/Direct limit is {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}')
+                        dl.getListener().onDownloadError(f'Torrent/Direct limit is ➣ {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is ➣ {get_readable_file_size(size)}')
                         return
         update_all_messages()
 
