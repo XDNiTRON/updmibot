@@ -110,12 +110,12 @@ def get_readable_message():
                 msg += f"\n<b>🚀Speed:</b> {download.speed()}\n<b>⏳ETA:</b> {download.eta()} "
                 # if hasattr(download, 'is_torrent'):
                 try:
-                    msg += f"\n<b>Seeders:</b> {download.aria_download().num_seeders}" \
-                        f" | <b>Peers:</b> {download.aria_download().connections}"
+                    msg += f"\n\n<b>╭• 🧲 Seeders:</b> {download.aria_download().num_seeders}" \
+                        f" | <b>╰• 🛰 Peers:</b> {download.aria_download().connections}"
                 except:
                     pass
             if download.status() == MirrorStatus.STATUS_DOWNLOADING:
-                msg += f"\n<b>To Stop:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n\n<b>💥ToStop:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += "\n\n"
         return msg
 
